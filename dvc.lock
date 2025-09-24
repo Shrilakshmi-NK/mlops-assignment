@@ -1,0 +1,22 @@
+schema: '2.0'
+stages:
+  train_model:
+    cmd: python run_experiment.py
+    deps:
+    - path: MLOps_assignment_dataset.csv
+      hash: md5
+      md5: d983536f17c57d40c737b1d43cf012a7
+      size: 76301858
+    - path: run_experiment.py
+      hash: md5
+      md5: f7104d8bc7d6e23ab988261b1c49aea9
+      size: 2492
+    outs:
+    - path: metrics.json
+      hash: md5
+      md5: 80b40d14182755ce6b3fcc0bb15f6cd6
+      size: 74
+    - path: model.joblib
+      hash: md5
+      md5: 73e69e92c66a0f6987a89bfcc25c8e87
+      size: 588693690

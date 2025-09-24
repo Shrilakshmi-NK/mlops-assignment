@@ -1,9 +1,9 @@
 stages:
   train_model:
-    cmd: python run_experiment.ipynb
+    cmd: python run_experiment.py
     deps:
     - MLOps_assignment_dataset.csv
-    - run_experiment.ipynb
+    - run_experiment.py
     outs:
     - model.joblib
     metrics:
