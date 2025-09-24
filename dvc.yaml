@@ -1,0 +1,11 @@
+stages:
+  train_model:
+    cmd: python run_experiment.ipynb
+    deps:
+    - MLOps_assignment_dataset.csv
+    - run_experiment.ipynb
+    outs:
+    - model.joblib
+    metrics:
+    - metrics.json:
+        cache: false
