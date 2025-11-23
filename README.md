@@ -126,10 +126,6 @@ Contributing
 - Fork the repo, create a feature branch, add tests, run the pipeline locally, and open a PR.
 - Follow PEP8; use black/flake8 for formatting and linting.
 
-License
-- Add your chosen license. Example:
-  SPDX-License-Identifier: MIT
-
 Contact
 - Repo owner: Shrilakshmi-NK (GitHub: @Shrilakshmi-NK)
 - For questions or issues: open an issue in the repository.
