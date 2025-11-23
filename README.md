@@ -1,14 +1,9 @@
 # mlops-assignment
 
-Short description
+### Short description
 A small MLOps assignment demonstrating an end-to-end workflow: dataset tracked with DVC, reproducible experiments, MLflow experiment logging, a trained scikit-learn RandomForest model, and a simple inference app (app.py). Use this repo as a template or learning example for DVC + MLflow + reproducible model delivery.
 
-Badges
-- CI: (add CI badge)
-- MLflow: (add MLflow tracking badge or link)
-- License: (add license badge)
-
-Table of contents
+## Table of contents
 - About
 - Features
 - Quickstart
@@ -22,13 +17,12 @@ Table of contents
 - Inference / Serving
 - Reproducing the pipeline
 - Contributing
-- License
 - Contact
 
-About
+### About
 This repository contains an MLOps assignment focused on reproducibility and deployment readiness. It uses DVC to manage the dataset, MLflow to log experiments and artifacts, and a scikit-learn RandomForest model as the primary model. A lightweight inference application is provided (app.py).
 
-Features
+### Features
 - Dataset tracked with DVC (dvc.yaml, dvc.lock, .dvc files)
 - Training and experiment orchestration via run_experiment.py
 - MLflow logging and experiment tracking (commit notes indicate MLflow logging is implemented)
@@ -36,9 +30,11 @@ Features
 - Lightweight inference application (app.py)
 - metrics.json with run metrics
 
-Quickstart
+# ____________________________________________________________________________
 
-Requirements
+## Quickstart
+
+### Requirements
 - Python 3.8+
 - pip
 - dvc (v1+)
@@ -62,7 +58,7 @@ Install (venv + pip)
    Otherwise install core dependencies:
      pip install scikit-learn mlflow dvc pandas numpy flask
 
-Data & DVC
+### Data & DVC
 - The dataset is tracked with DVC. Pointer file: MLOps_assignment_dataset.csv.dvc and pipeline files dvc.yaml and dvc.lock are included.
 - To fetch the data (if remote storage used):
   dvc pull
@@ -70,7 +66,7 @@ Data & DVC
 - To run the DVC pipeline (if configured):
   dvc repro
 
-Training & Experiment tracking (MLflow)
+### Training & Experiment tracking (MLflow)
 - Training entrypoint: run_experiment.py
   Example usage (adjust flags/configs to match script):
     python run_experiment.py
@@ -78,14 +74,10 @@ Training & Experiment tracking (MLflow)
 - To view MLflow runs locally:
     mlflow ui --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./mlruns
 
-Notes
-- The repository commit history indicates training used a scikit-learn RandomForest and MLflow logging was implemented.
-- Models and artifacts logged by MLflow are stored under the MLflow runs directory (./mlruns) or the configured MLflow backend.
-
-Evaluation
+### Evaluation
 - A metrics.json file exists capturing run metrics. Use run_experiment.py to reproduce evaluation or check the MLflow run for saved metrics.
 
-Inference / Serving
+### Inference / Serving
 - Inference entrypoint: app.py (a lightweight serving app).
   Example (development):
     python app.py
@@ -96,14 +88,14 @@ Inference / Serving
 
 - The repository contains a .gradio directory — a Gradio interface may be included; check app.py or notebooks for usage details.
 
-Reproducing the pipeline
+### Reproducing the pipeline
 - To reproduce a full run:
   1. git checkout <commit-sha>
   2. dvc pull
   3. pip install -r requirements.txt (or install core deps)
   4. python run_experiment.py
 
-Project structure (detected files)
+### Project structure (detected files)
 - run_experiment.py         # primary experiment & training script
 - app.py                    # inference / serving app
 - MLOps_assignment_dataset.csv.dvc  # DVC pointer for dataset
@@ -114,21 +106,18 @@ Project structure (detected files)
 - .gradio/                  # (UI / Gradio project files)
 - .venv/                    # virtual environment (should not be committed; present in repo)
 
-Configuration
+### Configuration
 - If config/ or YAML files are present, adjust the --config argument to run_experiment.py accordingly. If not present, check run_experiment.py for inline defaults or flags.
 
-Best practices & tips
+### Best practices & tips
 - Lock dependencies (requirements.txt / environment.yml) and include them in MLflow run metadata for reproducibility.
 - Record Git commit SHA in MLflow runs (common practice; commit messages indicate this repo logs experiment metadata).
 - Use dvc repro to manage reproducible compute pipelines and dvc push to store data in remote storage.
 
-Contributing
+### Contributing
 - Fork the repo, create a feature branch, add tests, run the pipeline locally, and open a PR.
 - Follow PEP8; use black/flake8 for formatting and linting.
 
-Contact
+### Contact
 - Repo owner: Shrilakshmi-NK (GitHub: @Shrilakshmi-NK)
 - For questions or issues: open an issue in the repository.
-
-Notes
-- This README was generated and tailored to the repository state discovered: run_experiment.py, app.py, DVC files, and MLflow usage confirmed by commit messages.
