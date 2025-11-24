@@ -1,4 +1,5 @@
 # mlops-assignment
+## Deployment: https://shrilakshmi-nk.github.io/mlops-assignment/
 
 ### Short description
 A small MLOps assignment demonstrating an end-to-end workflow: dataset tracked with DVC, reproducible experiments, MLflow experiment logging, a trained scikit-learn RandomForest model, and a simple inference app (app.py). Use this repo as a template or learning example for DVC + MLflow + reproducible model delivery.
